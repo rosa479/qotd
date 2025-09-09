@@ -9,9 +9,10 @@ export default function App() {
   const getQuote = async () => {
     console.log("Fetching a new quote...");
     try {
-      const response = await fetch('http://api.quotable.io/random');
+      const response = await fetch('https://stoic.tekloon.net/stoic-quote');
       const data = await response.json();
-      setQuoteData(data);
+      console.log(data)
+      setQuoteData(data.data);
     } catch (error) {
       console.error("Error fetching quote:", error);
     }
@@ -22,7 +23,7 @@ export default function App() {
 
     try {
       const result = await Share.share({
-        message: `"${quoteData.content}" - ${quoteData.author}`,
+        message: `"${quoteData.quote}" - ${quoteData.author}`,
       });
     } catch (error) {
       console.error("Error sharing quote:", error);
@@ -40,7 +41,7 @@ export default function App() {
       </View>
       {quoteData && (
         <View style={styles.quoteContainer}>
-          <Text style={styles.quoteContent}>"{quoteData.content}"</Text>
+          <Text style={styles.quoteContent}>"{quoteData.quote}"</Text>
           <Text style={styles.quoteAuthor}>- {quoteData.author}</Text>
         </View>
       )}
