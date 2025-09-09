@@ -22,12 +22,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "usesCleartextTraffic": true,
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.rosa479.qotd"
+      "package": "com.rosa479.qotd",
+      "usesCleartextTraffic": true
     },
     "web": {
       "favicon": "./assets/favicon.png"
