@@ -1,5 +1,4 @@
 import { StatusBar } from 'expo-status-bar';
-// 1. Import TouchableOpacity and remove Button
 import { StyleSheet, Text, View, Share, ActivityIndicator, Alert, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 
@@ -38,7 +37,6 @@ export default function App() {
       <StatusBar style="light" />
       <Text style={styles.title}>Quote of the day</Text>
       
-      {/* 2. Replace the Button components with styled TouchableOpacity */}
       <View style={styles.buttonContainer}>
         <TouchableOpacity 
           style={[styles.button, { backgroundColor: colors.mauve }]}
@@ -105,10 +103,9 @@ const styles = StyleSheet.create({
     width: '100%',
     marginVertical: 10,
   },
-  // 3. Add styles for your new custom button
   button: {
-    flex: 1, // Make buttons share space
-    marginHorizontal: 10, // Add space between buttons
+    flex: 1, 
+    marginHorizontal: 10, 
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 8,
@@ -116,7 +113,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonText: {
-    // A dark color from the palette is better than pure black
     color: colors.crust, 
     fontSize: 16,
     fontWeight: 'bold',
